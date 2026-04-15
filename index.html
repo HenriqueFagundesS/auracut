@@ -96,7 +96,6 @@
           <strong>R$ 50,00</strong>
         </div>
 
-        <!-- esse ficou um card meio grande no mobile, mas tá ok -->
         <div class="card">
           <div class="card-icon">💎</div>
           <h3>Combo Corte + Dep. Nariz e Orelhas</h3>
@@ -216,14 +215,12 @@
 
 <script>
   // carrossel
-  // ficou com um bug no resize antes, resolvi chamando o goTo de novo no evento
   const track = document.getElementById('carouselTrack');
   const slides = Array.from(track.children);
   const dotsContainer = document.getElementById('carouselDots');
   let current = 0;
   const total = slides.length;
 
-  // por enquanto só 1 visível, mas posso mudar pra 2 ou 3 no desktop depois
   function getVisible() {
     return 1;
   }
@@ -245,7 +242,7 @@
     const wrapperWidth = track.parentElement.offsetWidth;
     const slideWidth = wrapperWidth / v;
 
-    // força a largura de cada slide via js porque o css sozinho não tava respeitando
+    // força a largura de cada slide via js
     slides.forEach(s => s.style.minWidth = slideWidth + 'px');
 
     track.style.transform = `translateX(-${current * slideWidth}px)`;

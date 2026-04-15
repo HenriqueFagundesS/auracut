@@ -11,6 +11,7 @@
 <body>
 
   <!-- NAV -->
+  <!-- TODO: talvez adicionar um scroll spy aqui depois -->
 <header class="nav">
     <div class="wrap nav-inner">
       <a href="#inicio" class="logo">Aura <span>Cut</span></a>
@@ -20,6 +21,7 @@
       <nav id="mainNav">
         <a href="#servicos" onclick="closeMenu()">Serviços</a>
         <a href="#precos" onclick="closeMenu()">Preços</a>
+        <!-- esse botão ficou bonito -->
         <a href="#contato" class="nav-btn" onclick="closeMenu()">Agendar</a>
       </nav>
     </div>
@@ -34,6 +36,7 @@
   </section>
 
   <!-- SERVIÇOS -->
+  <!-- grid de cards - se mexer no numero de colunas lembra de ajustar o css tambem -->
   <section class="section" id="servicos">
     <div class="wrap">
       <h2>Serviços</h2>
@@ -54,7 +57,7 @@
         </div>
 
         <div class="card">
-          <div class="card-icon">💈</div>
+            <div class="card-icon">💈</div>
           <h3>Combo Corte + Barba</h3>
           <p>Corte completo e barba cuidada no mesmo atendimento..</p>
           <strong>R$ 60,00</strong>
@@ -95,6 +98,7 @@
           <strong>R$ 50,00</strong>
         </div>
 
+        <!-- esse ficou um card meio grande no mobile, mas tá ok -->
         <div class="card">
           <div class="card-icon">💎</div>
           <h3>Combo Corte + Dep. Nariz e Orelhas</h3>
@@ -108,7 +112,7 @@
           <p>Penteado, Luzes, Pigmentação, Relaxamento, Botox e Progressiva.</p>
           <strong>A consultar</strong>
         </div>
- 
+
       </div>
     </div>
   </section>
@@ -139,6 +143,7 @@
 
 
   <!-- GALERIA -->
+  <!-- carrossel feito na raça, mas funciona bem -->
 <section class="section alt" id="galeria">
   <div class="wrap">
     <h2>Galeria</h2>
@@ -178,7 +183,7 @@
       <div class="info">
         <h2>Contato</h2>
         <ul>
-          
+          <!-- href abre direto no whatsapp, testei no celular e funcionou -->
           <li><span>📱</span> <a href="https://wa.me/5511960972338">(11)96097-2338</a></li>
 <li>
   <span style="width:1.2rem;height:1.2rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -186,12 +191,10 @@
   </span>
   <a href="https://www.instagram.com/aura_cut_/">@aura_cut_</a>
 </li>
-          <li><span>🕐</span> Terça–Sábado: 10h–19h 
+          <li><span>🕐</span> Terça–Sábado: 10h–19h
         </ul>
         <a href="https://wa.me/5511960972338" class="btn-whatsapp" target="_blank" rel="noopener"><img src="images/zap.webp" alt="WhatsApp"> WhatsApp</a>
       </div>
-
-      <!-- formulário removido conforme solicitado -->
 
     </div>
   </section>
@@ -202,27 +205,32 @@
       <span class="logo">Aura <span>Cut</span></span>
       <p>© 2025 Aura Cut Barbearia · São Paulo, SP</p>
       <div class="socials">
+        <!-- icone do whatsapp em svg pra não depender de lib externa -->
 <a href="https://wa.me/5511960972338" class="fab" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
-</a>      </div>
+</a>
+      </div>
 
     </div>
   </footer>
 
 <script>
+  // carrossel
+  // ficou com um bug no resize antes, resolvi chamando o goTo de novo no evento
   const track = document.getElementById('carouselTrack');
   const slides = Array.from(track.children);
   const dotsContainer = document.getElementById('carouselDots');
   let current = 0;
   const total = slides.length;
 
- function getVisible() {
+  // por enquanto só 1 visível, mas posso mudar pra 2 ou 3 no desktop depois
+  function getVisible() {
     return 1;
   }
 
-  // Gera dots
+  // gera os dots dinamicamente
   for (let i = 0; i < total; i++) {
     const dot = document.createElement('button');
     dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
@@ -239,25 +247,29 @@
     const wrapperWidth = track.parentElement.offsetWidth;
     const slideWidth = wrapperWidth / v;
 
-    // Força largura de cada slide via JS
+    // força a largura de cada slide via js porque o css sozinho não tava respeitando
     slides.forEach(s => s.style.minWidth = slideWidth + 'px');
 
     track.style.transform = `translateX(-${current * slideWidth}px)`;
 
+    // atualiza qual dot tá ativo
     document.querySelectorAll('.carousel-dot').forEach((d, i) => {
       d.classList.toggle('active', i === current);
     });
   }
 
-  function moveCarousel(dir) { goTo(current + dir); }
+  function moveCarousel(dir) {
+    goTo(current + dir);
+  }
 
   window.addEventListener('resize', () => goTo(current));
 
- // Inicia
+  // inicia no primeiro slide
   goTo(0);
 </script>
 
 <script>
+  // menu hamburguer
   const hamburger = document.getElementById('hamburger');
   const mainNav = document.getElementById('mainNav');
 

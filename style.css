@@ -257,19 +257,6 @@ nav a:hover { color: var(--white); }
   font-style: italic;
 }
 
-/* ── SOBRE ── */
-.sobre-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 60px;
-  align-items: start;
-}
-.sobre-grid h2 { margin-bottom: 0; }
-.sobre-grid p {
-  color: var(--gray);
-  margin-bottom: 16px;
-}
-.sobre-grid .btn { margin-top: 8px; }
 
 /* ── CONTATO ── */
 .contato-grid {
@@ -446,7 +433,6 @@ nav a:hover { color: var(--white); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 720px) {
-  .sobre-grid { grid-template-columns: 1fr; gap: 24px; }
   .contato-grid { grid-template-columns: 1fr; gap: 40px; }
   .footer-inner { flex-direction: column; text-align: center; }
   .price-table { max-width: 100%; }

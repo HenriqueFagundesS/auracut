@@ -11,14 +11,17 @@
 <body>
 
   <!-- NAV -->
-  <header class="nav">
+<header class="nav">
     <div class="wrap nav-inner">
       <a href="#inicio" class="logo">Aura <span>Cut</span></a>
-      <nav>
-        <a href="#servicos">Serviços</a>
-        <a href="#precos">Preços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato" class="nav-btn">Agendar</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <a href="#servicos" onclick="closeMenu()">Serviços</a>
+        <a href="#precos" onclick="closeMenu()">Preços</a>
+        <a href="#sobre" onclick="closeMenu()">Sobre</a>
+        <a href="#contato" class="nav-btn" onclick="closeMenu()">Agendar</a>
       </nav>
     </div>
   </header>
@@ -133,7 +136,6 @@
         <div class="price-row"><span>Botox Capilar</span><span class="consult">A consultar</span></div>
         <div class="price-row"><span>Progressiva</span><span class="consult">A consultar</span></div>
       </div>
-      <p class="note">* Atendemos a domicílio. Preço pode variar conforme a localização.</p>
     </div>
   </section>
 
@@ -255,6 +257,21 @@
 
  // Inicia
   goTo(0);
+</script>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mainNav = document.getElementById('mainNav');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mainNav.classList.toggle('open');
+  });
+
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mainNav.classList.remove('open');
+  }
 </script>
 
 </body>
